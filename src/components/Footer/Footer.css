@@ -1,0 +1,10 @@
+.footer {
+    padding: 20px 0;
+    height: fit-content;
+    background-color: #57606f;
+}
+.footer__copyright {
+    color: white;
+    text-align: center;
+    font-weight: bolder;
+}

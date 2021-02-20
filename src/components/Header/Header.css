@@ -1,0 +1,15 @@
+.header {
+    width: 100%;
+    background-color: #ff4757;
+    display: flex;
+    padding: 10px 0;
+}
+.header__image {
+    width: 26px;
+    height: 26px;
+    margin: auto auto;
+}
+.header__image:hover {
+    cursor: pointer;
+    opacity: .8;
+}
