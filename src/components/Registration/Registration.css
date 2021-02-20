@@ -1,7 +1,7 @@
 .registration {
     width: 100%;
     height: fit-content;
-    height: 400px;
+    height: 500px;
     background-color: #dfe4ea;
     display: flex;
 }
@@ -19,6 +19,9 @@
     margin: 0 auto 30px;
     width: 100%;
     position: relative;
+}
+.registration__item:last-of-type {
+    margin-bottom: 10px;;
 }
 .registration__input {
     text-overflow: ellipsis;
@@ -46,7 +49,7 @@
 }
 .registration__submit {
     width: 100%;
-    margin: auto;
+    margin: 20px auto 0;
     border-radius: 8px;
     border: none;
     outline: none;
@@ -70,3 +73,34 @@
 .registration__submit:disabled {
     opacity: .8;
 }
+.registration__side {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    top: 50%;  /* position the top  edge of the element at the middle of the parent */
+    transform: translate(0, -50%); 
+}
+.registration__tool {
+    width: 20px;
+    height: 20px;
+}
+.registration__tool:last-of-type {
+    margin-left: 5px;
+}
+.registration__advice {
+    display: flex;
+    margin-top: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    border-left: 5px solid #ff4757;
+    padding: 10px 5% 10px;
+    background-color: rgba(255,71,87, .5);
+}
+.registration__advice::before {
+    content: 'Пароль должен содерджать 1 цифру, 1 строчную букву, 1 заглавную букву, быть больше 8 символов';
+}
+.registration__advice-hidden {
+    display: none;
+}
+
+/* Пароль должен содерджать 1 цифру, 1 строчную букву, 1 заглавную букву, быть больше 8 символов */
