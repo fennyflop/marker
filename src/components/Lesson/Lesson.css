@@ -1,6 +1,7 @@
 .lesson {
     width: 80%;
-    margin: 30px auto 0;
+    max-width: 300px;
+    margin-left: 30px;
     background-color: #57606f;
     box-sizing: border-box;
     padding: 10px;

@@ -1,63 +1,25 @@
 import './TableCreator.css';
-import HorizontalScroll from 'react-scroll-horizontal';
+import LessonAdderPopup from '../LessonAdderPopup/LessonAdderPopup';
+import { Route, Switch } from 'react-router-dom';
 import Lesson from '../Lesson/Lesson';
+import MakerRow from '../MakerRow/MakerRow';
 
 function TableCreator() {
     return (
-        <HorizontalScroll>
-            <section className="maker">
-                <div className="maker__column">
-                    <p className="maker__day">Понедельник</p>
-                    <div className="lessons">
-                        <Lesson />
-                        <Lesson />
-                        <button className="maker__add">Добавить урок</button>
-                    </div>
-                </div>
-                <div className="maker__column">
-                    <p className="maker__day">Вторник</p>
-                    <div className="lessons">
-                        <Lesson />
-                        <Lesson />
-                        <Lesson />
-                    </div>
-                </div>
-                <div className="maker__column">
-                    <p className="maker__day">Среда</p>
-                    <div className="lessons">
-                        <Lesson />
-                        <Lesson />
-                        <Lesson />
-                        <Lesson />
-                        <Lesson />
-                        <Lesson />
-                        <Lesson />
-                        <Lesson />
-                        <Lesson />
-                        <Lesson />
-                    </div>
-                </div>
-                <div className="maker__column">
-                    <p className="maker__day">Четверг</p>
-                    <div className="lessons">
-                        <Lesson />
-                        <Lesson />
-                        <Lesson />
-                        <Lesson />
-
-                    </div>
-                </div>
-                <div className="maker__column">
-                    <p className="maker__day">Пятница</p>
-                    <div className="lessons">
-                        <Lesson />
-                        <Lesson />
-                        <Lesson />
-                        <Lesson />
-                    </div>
-                </div>
+        <>
+            <section className="outer-maker">
+                <section className="maker">
+                    <MakerRow date="27.02" day="Вторник" />
+                    <MakerRow date="27.02" day="Вторник" />
+                    <MakerRow date="27.02" day="Вторник" />
+                    <MakerRow date="27.02" day="Вторник" />
+                    <MakerRow date="27.02" day="Вторник" />
+                </section >
             </section>
-        </HorizontalScroll>
+            <Route path="/timetable/create">
+                <LessonAdderPopup />
+            </Route>
+        </>
     );
 };
 

@@ -1,41 +1,64 @@
+.outer-maker {
+    width: 100vh;
+    height: 100vw;
+    transform: rotate(-90deg) translateX(-100vh);
+    transform-origin: top left;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    position: absolute;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
 .maker {
-    width: 100%;
+    min-width: 100vw;
+    width: fit-content;
     height: 100%;
+    box-sizing: border-box;
     margin: auto;
     background-color: #2f3542;
     display: flex;
     padding: 50px 50px;
-    overflow: scroll;
+    flex-direction: column;
+
+    transform: rotate(90deg) translateY(-100vh);
+    transform-origin: top left;
 }
-.maker__column {
-    width: 15%;
-    min-width: 300px;
-    height: 800px;
-    border: 2px solid #57606f;
-    border-right: none;
+.maker__row {
+    min-width: 100%;
+    width: fit-content;
+    height: fit-content;
+    border: 3px solid #57606f;
     border-radius: 5px;
-    margin-right: 50px;
-    padding: 10px 0;
-    overflow-y: scroll;
+    margin-bottom: 30px;
+    padding: 10px 10px 10px 0;
+    display: flex;
+    align-items: center;
 }
-.maker__column:last-of-type {
+.maker__row:last-of-type {
     margin-right: 0;
 }
+.maker__time {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.maker__date {
+    color: white;
+    font-size: 40px;
+}
 .maker__day {
-    padding: 10px 0;
-    text-align: center;
     color: white;   
-    font-size: 20px;
-    font-weight: bold;
-    text-decoration: underline;
+    font-size: 15px;
+    font-weight: normal;
 }
 .lessons {
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
 }
 .maker__add {
-    width: 80%;
-    margin: 30px auto 0;
+    width: fit-content;
     box-sizing: border-box;
     padding: 20px;
     border-radius: 8px;
@@ -44,4 +67,10 @@
     background-color: #1e90ff;
     font-size: 20px;
     color: white;
+    margin:  0 0 0 30px; 
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+    text-decoration: none;
 }

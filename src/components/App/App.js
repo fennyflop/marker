@@ -11,7 +11,9 @@ function App() {
     <>
       {/* <div className="mobile"> */}
       {/* <Header /> */}
-      <TableCreator />
+      <Route path="/timetable">
+        <TableCreator />
+      </Route>
       {/* <Route path="/signin">
         <Login />
       </Route>
