@@ -10,6 +10,10 @@
     width: fit-content;
     border-radius: 8px;
     overflow: hidden;
+    box-sizing: border-box;
+}
+.time__fieldset:focus-within {
+    border: 2px solid #1e90ff;
 }
 .time__input {
     height: 100%;
@@ -22,5 +26,8 @@
     margin: 0;
     text-align: center;
     color: gray;
-    font-size: 15px; 
+    font-size: 15px;    
+}
+.time__fieldset-invalid {
+    border: 2px solid crimson;
 }

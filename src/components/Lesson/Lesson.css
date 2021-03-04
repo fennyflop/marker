@@ -29,6 +29,9 @@
     display: flex;
     align-items: center;
     width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .lesson__teacher-image {
     width: 32px;
@@ -51,4 +54,50 @@
     top: 10px;
     font-weight: bolder;
     color: white;
+}
+.lesson__homework {
+    margin-top: 10px;
+    padding: 8px 0 8px 42px;
+    overflow: hidden;
+}
+.lesson__checkbox {
+    display: none;
+}
+.lesson__homework-message {
+    position: relative;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: white;
+}
+.lesson__homework-message::before {
+    position: absolute;
+    content: '';
+    background-position: center;
+    background-size: contain;
+    background-image: url('../../images/checkmark.png');
+    background-repeat: no-repeat;
+    width: 32px;
+    height: 32px;
+    bottom: -8px;
+    left: -42px;    
+
+    transform: scale(0) rotateZ(180deg);
+    transition: all 0.4s cubic-bezier(0.54, 0.01, 0, 1.49);
+}
+.lesson__checkbox:checked + .lesson__homework-message::before {
+    transform: scale(1) rotateZ(0deg);
+}
+.lesson__checkbox:checked + .lesson__homework-message {
+    text-decoration: line-through;
+}
+.lesson__homework-message::after {
+    content: "";
+    border: 2px solid white;
+    width: 29px;
+    height: 29px;
+    position: absolute;
+    left: -42px;
+    top: -4px;
+    border-radius: 50%;
 }

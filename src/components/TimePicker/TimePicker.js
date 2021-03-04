@@ -2,15 +2,15 @@ import { min } from 'moment';
 import { useEffect, useState } from 'react/cjs/react.development';
 import './TimePicker.css';
 
-function TimePicker(props) {
+function TimePicker({ handleBlur, isValid }) {
 
-    const [hours, setHours] = useState(9);
+    const [hours, setHours] = useState(10);
     const [minutes, setMinutes] = useState(40);
 
     function handleHours(evt) {
         const hour = Number(evt.target.value);
         if (isNaN(hour) || hour < 1) {
-            setHours(1);
+            setHours(0);
         } else if (hour >= 24) {
             setHours(24);
         } else {
@@ -33,16 +33,16 @@ function TimePicker(props) {
         }
     }
 
-    useEffect(() => {
-        console.log(hours + ':' + minutes);
-    }, [hours, minutes])
+    function handleTime() {
+        handleBlur((hours * 60 * 60) + (minutes * 60));
+    }
 
     return (
         <>
-            <fieldset className="time__fieldset">
-                <input className="time__input" value={hours} onChange={handleHours} />
+            <fieldset className={`time__fieldset ${isValid ? '' : 'time__fieldset-invalid'}`}>
+                <input className="time__input" value={hours} onChange={handleHours} onBlur={handleTime} />
                 <p className="time__divider">:</p>
-                <input className="time__input" value={minutes} onChange={handleMinutes} />
+                <input className="time__input" value={minutes} onChange={handleMinutes} onBlur={handleTime} />
             </fieldset>
         </>
     );

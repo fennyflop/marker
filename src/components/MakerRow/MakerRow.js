@@ -1,8 +1,14 @@
 import './MakerRow.css';
 import Lesson from '../Lesson/Lesson';
-import { NavLink } from 'react-router-dom';
+import HorizontalScroll from 'react-scroll-horizontal';
 
-function MakerRow({ date, day }) {
+function MakerRow({ date, day, addLesson }) {
+
+    function handleAddButton() {
+        console.log(date);
+        addLesson(date);
+    }
+
     return (
         <div className="maker__row">
             <div className="maker__time">
@@ -12,7 +18,17 @@ function MakerRow({ date, day }) {
             <div className="lessons">
                 <Lesson />
                 <Lesson />
-                <NavLink className="maker__add" to="/timetable/create">Добавить урок</NavLink>
+                <Lesson />
+                <Lesson />
+                <Lesson />
+                <Lesson />
+                <Lesson />
+                <Lesson />
+                <Lesson />
+                <Lesson />
+                <Lesson />
+                <Lesson />
+                <button className="maker__add" onClick={handleAddButton}>Добавить урок</button>
             </div>
         </div>
     );

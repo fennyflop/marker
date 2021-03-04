@@ -1,0 +1,15 @@
+.adder__durations {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+.adder__duration-error {
+    display: flex;
+    margin-top: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    border-left: 5px solid #ff4757;
+    padding: 10px 5% 10px;
+    background-color: rgba(255,71,87, .5);
+    margin: 0 0 20px;
+}
