@@ -25,21 +25,49 @@
     overflow: hidden;
     text-overflow: ellipsis;
     color: white;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #747d8c;
 }
 .lesson__theme {
-    margin: 10px 0;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    width: 70%;
+    box-sizing: border-box;
+    padding-right: 8px;
+    max-height: 90px;
+    word-break: break-all;
     color: white;
+    overflow-y: scroll;
+    height: fit-content;
+    max-height: 60px;
+}
+/* width */
+.lesson__theme::-webkit-scrollbar {
+    width: 2px;
+}
+  
+  /* Track */
+.lesson__theme::-webkit-scrollbar-track {
+    background: #747d8c;
+}
+  
+  /* Handle */
+.lesson__theme::-webkit-scrollbar-thumb {
+    background: white;
+}
+  
+  /* Handle on hover */
+.lesson__theme::-webkit-scrollbar-thumb:hover {
+    background: white;
 }
 .lesson__teacher {
     display: flex;
     align-items: center;
+    box-sizing: border-box;
+    padding: 7px 0;
     width: 100%;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    border-bottom: 2px solid #747d8c;
 }
 .lesson__teacher-image {
     width: 32px;
@@ -65,8 +93,9 @@
 }
 .lesson__homework {
     margin-top: 10px;
-    padding: 8px 0 8px 42px;
+    padding: 15px 0 8px 42px;
     overflow: hidden;
+    border-top: 2px solid #747d8c;
 }
 .lesson__checkbox {
     display: none;
@@ -108,4 +137,28 @@
     left: -42px;
     top: -4px;
     border-radius: 50%;
+}
+.lesson__events {
+    display: flex;
+    flex-direction: column;
+    width: 80px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    padding-left: 5px;
+    height: fit-content;
+    /* border-left: 2px solid #747d8c; */
+}
+.lesson__event {
+    color: white;
+    font-size: 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.lesson__widget {
+    display: flex;
+    height: fit-content;
+    margin-top: 10px;
 }

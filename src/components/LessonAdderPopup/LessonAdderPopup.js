@@ -29,7 +29,7 @@ const eventsList = [
     { label: 'Проверочная работа', value: 'assessment' }
 ]
 
-function LessonAdderPopup({ isOpen, date, onClose }) {
+function LessonAdderPopup({ isOpen, date, onClose, addLesson }) {
 
     // Следить за данными.
 
@@ -39,12 +39,12 @@ function LessonAdderPopup({ isOpen, date, onClose }) {
     const [events, setEvents] = useState();
     const [topic, setTopic] = useState();
     const [room, setRoom] = useState();
+    const [homework, setHomework] = useState();
 
     // Предмет
 
     function handleSubject(evt) {
         setSubject(evt); // {label: x, value: y}
-        console.log(evt);
     }
 
     // Учитель
@@ -75,6 +75,12 @@ function LessonAdderPopup({ isOpen, date, onClose }) {
 
     function handleRoom(evt) {
         setRoom(evt.target.value);
+    }
+
+    // Домашка
+
+    function handleHomework(evt) {
+        setHomework(evt.target.value);
     }
 
     // Cледить за выбранным временем.
@@ -114,7 +120,22 @@ function LessonAdderPopup({ isOpen, date, onClose }) {
         if (x) {
             onClose()
         }
-    };
+    }
+
+    function handleSubmit(evt) {
+        evt.preventDefault();
+        addLesson({
+            room,
+            startTime,
+            endTime,
+            subject: subject.label,
+            topic,
+            professor: professor.label,
+            homework,
+            events,
+        });
+        onClose();
+    }
 
     return (
         <section className={`adder ${isOpen ? 'adder__open' : ''}`}>
@@ -160,7 +181,7 @@ function LessonAdderPopup({ isOpen, date, onClose }) {
                     </Switch>
                 </header>
                 <Switch>
-                    <form className="adder__form">
+                    <form className="adder__form" onSubmit={handleSubmit}>
                         <Route path="/timetable/create/lesson/subject">
                             <Select defaultValue={subject} onChange={handleSubject} className="adder__selector" placeholder="Выбрать предмет" options={lessonOptions} noOptionsMessage={() => 'Предметов не найдено'} />
                             <a className="adder__leave" onClick={handleLeave}>Выйти</a>
@@ -207,7 +228,7 @@ function LessonAdderPopup({ isOpen, date, onClose }) {
                             </div>
                         </Route>
                         <Route path="/timetable/create/lesson/room">
-                            <input onBlur={handleRoom} className="adder__input" type="text" placeholder="Номер кабинета" />
+                            <input defaultValue={room} onBlur={handleRoom} className="adder__input" type="text" placeholder="Номер кабинета" />
                             <div className="adder__buttons">
                                 <a className="adder__leave" onClick={handleLeave}>Выйти</a>
                                 <a className="adder__back" onClick={handleHistoryBack}>Назад</a>
@@ -232,7 +253,7 @@ function LessonAdderPopup({ isOpen, date, onClose }) {
                             </div>
                         </Route>
                         <Route path="/timetable/create/lesson/topic">
-                            <textarea onBlur={handleTopic} className="adder__textarea" type="text" placeholder="Тема занятия" />
+                            <textarea defaultValue={topic} onBlur={handleTopic} className="adder__textarea" type="text" placeholder="Тема занятия" />
                             <div className="adder__buttons">
                                 <a className="adder__leave" onClick={handleLeave}>Выйти</a>
                                 <a className="adder__back" onClick={handleHistoryBack}>Назад</a>
@@ -240,7 +261,7 @@ function LessonAdderPopup({ isOpen, date, onClose }) {
                             </div>
                         </Route>
                         <Route path="/timetable/create/lesson/homework">
-                            <textarea onBlur={handleTopic} className="adder__textarea" type="text" placeholder="Домашняя работа" />
+                            <textarea defaultValue={homework} onBlur={handleHomework} className="adder__textarea" type="text" placeholder="Домашняя работа" />
                             <div className="adder__buttons">
                                 <a className="adder__leave" onClick={handleLeave}>Выйти</a>
                                 <a className="adder__back" onClick={handleHistoryBack}>Назад</a>

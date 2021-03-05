@@ -2,10 +2,15 @@ import './MakerRow.css';
 import Lesson from '../Lesson/Lesson';
 import HorizontalScroll from 'react-scroll-horizontal';
 
-function MakerRow({ date, day, addLesson }) {
+function MakerRow({ date, day, addLesson, lessons }) {
+
+    // Сортируем уроки по времени
+
+    lessons.sort((a, b) => {
+        return a.startTime - b.startTime;
+    });
 
     function handleAddButton() {
-        console.log(date);
         addLesson(date);
     }
 
@@ -16,18 +21,9 @@ function MakerRow({ date, day, addLesson }) {
                 <p className="maker__day">{day}</p>
             </div>
             <div className="lessons">
-                <Lesson />
-                <Lesson />
-                <Lesson />
-                <Lesson />
-                <Lesson />
-                <Lesson />
-                <Lesson />
-                <Lesson />
-                <Lesson />
-                <Lesson />
-                <Lesson />
-                <Lesson />
+                {lessons.map((lesson, i) => {
+                    return <Lesson lesson={lesson} key={i} num={i} />
+                })}
                 <button className="maker__add" onClick={handleAddButton}>Добавить урок</button>
             </div>
         </div>
