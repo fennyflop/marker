@@ -5,6 +5,7 @@ import Registration from '../Registration/Registration';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 import TableCreator from '../TableCreator/TableCreator';
+import DayView from '../DayView/DayView';
 
 function App() {
   return (
@@ -13,6 +14,9 @@ function App() {
       {/* <Header /> */}
       <Route path="/timetable">
         <TableCreator />
+      </Route>
+      <Route path="/day">
+        <DayView />
       </Route>
       {/* <Route path="/signin">
         <Login />

@@ -1,0 +1,34 @@
+.day {
+    width: 100%;
+    height: fit-content;
+    margin: auto;
+    background-color: #2f3542;
+    display: flex;
+    box-sizing: border-box;
+    padding: 50px 100px 20px;
+}
+.day__node {
+    width: fit-content;
+}
+.day__circle {
+    border: 1px solid white;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.day__count {
+    color: white;
+    font-size: 25px;
+}
+.day__line {
+    height: 200px;
+    width: 1px;
+    background-color: white;
+    margin: auto;
+}
+.day__node:last-of-type .day__line {
+    display: none;
+}
