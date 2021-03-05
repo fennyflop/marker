@@ -14,7 +14,7 @@ function Lesson() {
             </div>
             <div className="lesson__homework">
                 <input className="lesson__checkbox" type="checkbox" id="homework" />
-                <label className="lesson__homework-message" for="homework">ВыучитьВыучитьВыучитьВыучитьВыучитьВыучитьВыучитьВыучить</label>
+                <label className="lesson__homework-message" for="homework">Олег</label>
             </div>
         </div>
     );

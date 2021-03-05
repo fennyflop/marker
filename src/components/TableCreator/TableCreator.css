@@ -1,40 +1,40 @@
-/* .outer-maker {
-    width: 100vh;
-    height: 100vw;
-    transform: rotate(-90deg) translateX(-100vh);
-    transform-origin: top left;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    position: absolute;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-} */
 .maker {
     width: 100%;
+    max-width: 1000px;
     height: fit-content;
-    /* box-sizing: border-box; */
     margin: auto;
     background-color: #2f3542;
     display: flex;
     box-sizing: border-box;
-    padding: 50px 50px 20px;
-    flex-direction: column;
-    /* overflow-x: hidden; */
+    padding: 50px 100px 20px;
 
-    /* transform: rotate(90deg) translateY(-100vh);
-    transform-origin: top left; */
+    /* flex-direction: column; */
+    flex-direction: row;
+}
+.maker__column {
+    width: 100%;
+    height: fit-content;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    box-sizing: border-box;
+    padding: 10px 10px;
+    display: flex;
+
+    align-items: center;
+    flex-direction: column;
 }
 .maker__row {
     width: 100%;
     height: fit-content;
-    /* border: 3px solid #57606f; */
     border-radius: 5px;
     margin-bottom: 30px;
     box-sizing: border-box;
-    padding: 10px 40px;
+    padding: 10px 10px;
     display: flex;
+    border: 1px solid #ff6b81;
+
     align-items: center;
-    overflow-x: scroll;
+    flex-direction: column;
 }
 .maker__row:last-of-type {
     margin-right: 0;
@@ -44,6 +44,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-bottom: 30px;
 }
 .maker__date {
     color: white;
@@ -58,19 +59,25 @@
 }
 .lessons {
     display: flex;
-    /* flex-direction: column; */
+
+    /* Обновления */
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: auto;
+    flex-direction: column;
 }
 .maker__add {
-    width: fit-content;
+    width: 100%;
+    max-width: 300px;
     box-sizing: border-box;
-    padding: 20px;
+    padding: 30px 40px;
     border-radius: 8px;
     outline: none;
     border: none;
     background-color: #1e90ff;
     font-size: 20px;
     color: white;
-    margin:  0 0 0 30px; 
     text-align: center;
     display: flex;
     justify-content: center;

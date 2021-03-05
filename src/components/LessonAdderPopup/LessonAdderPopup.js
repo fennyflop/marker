@@ -44,6 +44,7 @@ function LessonAdderPopup({ isOpen, date, onClose }) {
 
     function handleSubject(evt) {
         setSubject(evt); // {label: x, value: y}
+        console.log(evt);
     }
 
     // Учитель
@@ -161,7 +162,7 @@ function LessonAdderPopup({ isOpen, date, onClose }) {
                 <Switch>
                     <form className="adder__form">
                         <Route path="/timetable/create/lesson/subject">
-                            <Select onChange={handleSubject} className="adder__selector" placeholder="Выбрать предмет" options={lessonOptions} noOptionsMessage={() => 'Предметов не найдено'} />
+                            <Select defaultValue={subject} onChange={handleSubject} className="adder__selector" placeholder="Выбрать предмет" options={lessonOptions} noOptionsMessage={() => 'Предметов не найдено'} />
                             <a className="adder__leave" onClick={handleLeave}>Выйти</a>
                             <NavLink to="/timetable/create/lesson/time" className="adder__next">Продолжить</NavLink>
                         </Route>
@@ -178,7 +179,7 @@ function LessonAdderPopup({ isOpen, date, onClose }) {
                             </div>
                         </Route>
                         <Route path="/timetable/create/lesson/professor">
-                            <Select onChange={handleProfessor} className="adder__selector" placeholder="Выбрать учителя" options={teacherOptions} noOptionsMessage={() => 'Учителей не найдено'} />
+                            <Select defaultValue={professor} onChange={handleProfessor} className="adder__selector" placeholder="Выбрать учителя" options={teacherOptions} noOptionsMessage={() => 'Учителей не найдено'} />
                             <div className="adder__buttons">
                                 <a className="adder__leave" onClick={handleLeave}>Выйти</a>
                                 <a className="adder__back" onClick={handleHistoryBack}>Назад</a>

@@ -1,12 +1,20 @@
 .lesson {
-    width: 80%;
+    width: 100%;
     max-width: 300px;
-    margin-left: 30px;
+    /* margin-left: 30px;row */
     background-color: #57606f;
     box-sizing: border-box;
     padding: 10px;
     border-radius: 8px;
     position: relative;
+
+    /* Обновления */
+    margin-bottom: 30px;
+    transition: all .1s ease-in-out;
+}
+.lesson:hover {
+    transform: translate(0, -2px);
+    box-shadow: 0 0 5px #ffffff;
 }
 .lesson__time {
     color: white;
